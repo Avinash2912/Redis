@@ -31,7 +31,6 @@ app.post('/user/:id/hash', async (req, res) => {
 });
 
 
-
 app.get('/user/:id/hash', async (req, res) => {
     const userProfile = await redis.hgetall(`user:${req.params.id}:hash`);      
     if (Object.keys(userProfile).length > 0) {
